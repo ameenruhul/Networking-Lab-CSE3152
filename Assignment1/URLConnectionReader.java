@@ -1,0 +1,17 @@
+//A program to access web page from an URL
+
+import java.net.*;
+import java.io.*;
+
+public class URLConnectionReader {
+    public static void main(String[] args) throws Exception {
+        URL oracle = new URL("http://www.prothoalo.com/");
+        URLConnection yc = oracle.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(
+                                    yc.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) 
+            System.out.println(inputLine);
+        in.close();
+    }
+}
